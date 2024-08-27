@@ -1,0 +1,56 @@
+# Archivos de construcción y carpetas de salida
+bin/
+obj/
+
+# Archivos generados por el entorno de desarrollo
+.vscode/
+.idea/
+*.userprefs
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos de configuración del entorno local
+*.vs/
+.vscode/
+*.csproj.user
+*.pidb
+*.cache/
+*.pdb
+
+# Archivos de configuración de macOS
+.DS_Store
+*.swp
+
+# Archivos de configuración de Windows
+Thumbs.db
+
+# Archivos de configuración de Android
+*.apk
+*.ap_
+
+# Archivos de configuración de iOS
+build/
+*.ipa
+*.xcuserstate
+*.xcworkspace/
+
+# Archivos de configuración para Linux
+*~
+*.swp
+
+# Paquetes y dependencias
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Cartera de configuración global de .NET y dependencias
+.globalization/
+
+# Archivos de implementación y cache del proyecto
+wwwroot/
+node_modules/
