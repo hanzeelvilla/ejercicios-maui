@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="capturaAlumnos.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Margin="15">
+
+           <Label Text="Nombre" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="nombre" Margin="0, 0, 0, 30"/>
+
+            <Label Text="Calificación" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="calificacion" Keyboard="Numeric" Margin="0, 0, 0, 30"/>
+
+            <Label Text="Género" FontSize="Medium" FontAttributes="Bold"/>
+            <Picker x:Name="genero" Title="Genero" VerticalOptions="Center" Margin="0, 0, 0, 30">
+                <Picker.Items>
+                    <x:String>Mamá</x:String>
+                    <x:String>Papá</x:String>
+                    <x:String>Machete</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Estado" FontSize="Medium" FontAttributes="Bold"/>
+
+            <HorizontalStackLayout>
+                <CheckBox x:Name="activo" VerticalOptions="Center"/>
+                <Label Text="Activo" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Margin="0, 0, 0, 30">
+                <CheckBox x:Name="inactivo" VerticalOptions="Center"/>
+                <Label Text="Inactivo" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Municipio" FontSize="Medium" FontAttributes="Bold"/>
+            <RadioButton x:Name="colima" Content="Colima" GroupName="municipio"/>
+            <RadioButton x:Name="villa" Content="Villa de Álvarez" GroupName="municipio"/>
+            <RadioButton x:Name="tecoman" Content="Tecomán" GroupName="municipio"/>
+            <RadioButton x:Name="ixtlahuacan" Content="Ixtlahuacán" GroupName="municipio"/>
+            <RadioButton x:Name="coquimatlan" Content="Coquimatlán" GroupName="municipio"/>
+            <RadioButton x:Name="armeria" Content="Armería" GroupName="municipio"/>
+            <RadioButton x:Name="comala" Content="Comala" GroupName="municipio"/>
+            <RadioButton x:Name="cuauhtemoc" Content="Cuauhtémoc" GroupName="municipio"/>
+            <RadioButton x:Name="minatitlan" Content="Minatitlán" GroupName="municipio"/>
+            <RadioButton x:Name="manzanillo" Content="Manzanillo" GroupName="municipio"/>
+
+            <Button Text="Agregar"
+                    CornerRadius="24"
+                    Background="Purple"
+                    Clicked="Agregar"
+                    Margin="15, 1"/>
+
+            <ListView x:Name="listaAlumnos"
+                      RowHeight="120"
+                      ItemTapped="ListaTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Calificacion}"/>
+                                <Label Text="{Binding Genero}"/>
+                                <Label Text="{Binding Estado}"/>
+                                <Label Text="{Binding Municipio}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
